@@ -1,0 +1,65 @@
+<nav class="navbar">
+  <div class="logo">Welcome!</div>
+  
+  <button 
+    class="menu-button" 
+    (click)="toggleMobileMenu()"
+    *ngIf="windowWidth <= 768 && !isMobileMenuOpen"
+    aria-label="Toggle menu"
+  >
+    ☰
+  </button>
+  <button 
+    class="menu-button close" 
+    (click)="toggleMobileMenu()"
+    *ngIf="windowWidth <= 768 && isMobileMenuOpen"
+    aria-label="Toggle menu"
+  >
+    X
+  </button>
+
+  <ul class="nav-links" [class.active]="isMobileMenuOpen">
+    <li *ngFor="let item of filteredMenuItems">
+      <a 
+        *ngIf="item.type === 'scroll' && item.id" 
+        href="#{{ item.id }}" 
+        (click)="scrollTo(item.id)"
+        [class.active]="activeLink === item.id"
+      >
+        {{ item.label }}
+      </a>
+      <a 
+        *ngIf="item.type === 'link'" 
+        [href]="item.href" 
+        target="_blank"
+        class="resume-link"
+      >
+        {{ item.label }}
+      </a>
+    </li>
+  </ul>
+
+  <div class="search" [class.active]="windowWidth > 768 || isMobileMenuOpen">
+    <input 
+      type="text" 
+      placeholder="Search" 
+      [(ngModel)]="searchQuery" 
+      (input)="filterMenu()"
+      (focus)="showSuggestions = true"
+      (blur)="closeSuggestions()"
+    />
+    <button><i class="fas fa-search"></i></button>
+    
+    <div class="search-suggestions" *ngIf="showSuggestions && searchQuery">
+      <div 
+        *ngFor="let item of filteredMenuItems"
+        (mousedown)="item.type === 'scroll' && item.id ? scrollTo(item.id) : null"
+      >
+        {{ item.label }}
+      </div>
+      <div *ngIf="filteredMenuItems.length === 0" class="no-results">
+        No results found
+      </div>
+    </div>
+  </div>
+</nav>

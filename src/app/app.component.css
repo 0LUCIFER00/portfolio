@@ -1,0 +1,11 @@
+h2{
+  text-align: center;
+  color: #fff;
+  background-color: #1f1f2e;
+  font-size: 3rem;
+  font-weight: bold;
+}
+
+* {
+  scroll-behavior: smooth;
+}

@@ -1,0 +1,14 @@
+<div class="about-section" [@fadeIn]>
+  <h2>About Me</h2>
+  <p>
+    I’m a passionate frontend developer with experience building responsive and interactive websites using Angular. I enjoy turning complex problems into clean, user-friendly interfaces.
+  </p>
+
+  <h3>Skills</h3>
+  <div class="skill" *ngFor="let skill of skills">
+    <div class="skill-name">{{ skill.name }}</div>
+    <div class="skill-bar">
+      <div class="skill-level" [style.width.%]="skill.level"></div>
+    </div>
+  </div>
+</div>

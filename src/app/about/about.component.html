@@ -1,0 +1,17 @@
+<div class="about-section">
+  <h2>About</h2>
+  <p>As a passionate and dedicated IT student, I specialize in <span class="highlight">Full Stack Development</span> with hands-on experience in <span class="highlight">Angular</span>,<span class="highlight"> Node.js </span>and<span class="highlight"> SQL</span>. With a strong foundation in programming languages like <span class="highlight">Java</span>,<span class="highlight"> Python</span>, I enjoy building web applications that are functional, efficient, and user-friendly.</p>
+  <p>Currently interning as a <span class="highlight">Junior Software Developer</span> at <span class="highlight">ScalarAt Pvt. Ltd.</span>, I am gaining real-world experience in API integration, database management, and modern UI development. My academic journey has strengthened my skills in both theoretical knowledge and practical implementation, backed by consistent academic excellence.</p>
+
+  <h2>My Skills</h2>
+  <div class="skills-wrapper">
+  <div class="skills-grid">
+    <div class="skill-card" *ngFor="let skill of skills" [class.highlight-card]="skill.highlight">
+      <img [src]="skill.icon" [alt]="skill.name" [style.width]="skill.width" [style.height]="skill.height"/>
+      <span>{{ skill.name }}</span>
+    </div>
+  </div>
+  </div>
+</div>
+
+

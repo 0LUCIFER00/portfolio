@@ -1,0 +1,64 @@
+.about-section {
+  padding: 60px 20px;
+  background-color: #f6f9fc;
+  max-width: 800px;
+  margin: auto;
+  border-radius: 16px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+  animation: slideIn 1s ease;
+}
+
+.about-section h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 2rem;
+  color: #333;
+}
+
+.about-section p {
+  font-size: 1.1rem;
+  color: #555;
+  line-height: 1.6;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.about-section h3 {
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+  color: #444;
+}
+
+.skill {
+  margin-bottom: 15px;
+}
+
+.skill-name {
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 5px;
+}
+
+.skill-bar {
+  background-color: #e0e0e0;
+  border-radius: 25px;
+  overflow: hidden;
+  height: 12px;
+}
+
+.skill-level {
+  height: 12px;
+  background: linear-gradient(to right, #00c6ff, #0072ff);
+  transition: width 1.2s ease-in-out;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

@@ -1,0 +1,18 @@
+<div class="timeline-container">
+  <h2 class="timeline-header">Experience</h2>
+  <div class="timeline">
+    <div *ngFor="let exp of experienceList" class="timeline-item">
+      <div class="timeline-year">
+        <span>{{ exp.year }}</span>
+      </div>
+      <div class="timeline-dot"></div>
+      <div class="timeline-line"></div>
+      <div class="timeline-content">
+        <h3>{{ exp.title }}</h3>
+        <h4>{{ exp.company }}</h4>
+        <p>{{ exp.place }}</p>
+        <p>{{ exp.description }}</p>
+      </div>
+    </div>
+  </div>
+</div>

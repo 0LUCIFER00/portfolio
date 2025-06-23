@@ -1,0 +1,18 @@
+<div class="timeline-container">
+  <h2 class="timeline-header">Education</h2>
+  <div class="timeline">
+    <div *ngFor="let edu of educationList" class="timeline-item">
+      <div class="timeline-year">
+        <span>{{ edu.year }}</span>
+      </div>
+      <div class="timeline-dot"></div>
+      <div class="timeline-line"></div>
+      <div class="timeline-content">
+        <h3>{{ edu.title }}</h3>
+        <h4>{{ edu.institution }}</h4>
+        <p *ngIf="edu.cgpa">CGPA: {{ edu.cgpa }}</p>
+        <p *ngIf="edu.percentage">Percentage: {{ edu.percentage }}</p>
+      </div>
+    </div>
+  </div>
+</div>

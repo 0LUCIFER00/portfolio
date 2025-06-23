@@ -1,0 +1,30 @@
+<section class="contact-section" [@slideFadeIn]>
+  <h2>Contact Me</h2>
+  <form [formGroup]="contactForm" (ngSubmit)="onSubmit()" novalidate>
+    <div class="form-group">
+      <input formControlName="name" type="text" required />
+      <label>Name</label>
+      <div class="error" *ngIf="contactForm.get('name')?.invalid && contactForm.get('name')?.touched">
+        Name is required.
+      </div>
+    </div>
+
+    <div class="form-group">
+      <input formControlName="email" type="email" required />
+      <label>Email</label>
+      <div class="error" *ngIf="contactForm.get('email')?.invalid && contactForm.get('email')?.touched">
+        Enter a valid email.
+      </div>
+    </div>
+
+    <div class="form-group">
+      <textarea formControlName="message" rows="5" required></textarea>
+      <label>Message</label>
+      <div class="error" *ngIf="contactForm.get('message')?.invalid && contactForm.get('message')?.touched">
+        Message should be at least 10 characters.
+      </div>
+    </div>
+
+    <button type="submit" [disabled]="contactForm.invalid">Send Message</button>
+  </form>
+</section>

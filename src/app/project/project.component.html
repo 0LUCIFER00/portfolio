@@ -1,0 +1,16 @@
+<div class="portfolio">
+  <h2>Project</h2>
+  <div class="grid">
+    <div class="card" *ngFor="let item of items">
+      <img [src]="item.image" [alt]="item.title">
+      <div class="overlay">
+        <h3>{{ item.title }}</h3>
+        <p>{{ item.description }}</p>
+        <!-- <button>See More →</button> -->
+      </div>
+    </div>
+  </div>
+  <div class="view-more">
+    <button>View More</button>
+  </div>
+</div>
